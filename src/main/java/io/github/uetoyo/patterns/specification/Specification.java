@@ -7,5 +7,11 @@ package io.github.uetoyo.patterns.specification;
  */
 public interface Specification<T> {
 
+	/**
+	 * Check if the {@code candidate} is satisfied by the specification.
+	 *
+	 * @param candidate an object to test.
+	 * @return {@code true} if the candidate satisfies the specification otherwise {@code false}
+	 */ 
 	boolean isSatisfiedBy(T candidate);
 }
