@@ -8,7 +8,7 @@ This package is in active development but incomplete.
 
 Whe have a person class with attributes brith day and we want to know if he is adult.
 
-The straitforward approach is create the custom parametrized specification.
+The straigtforward approach is create the custom parametrized specification.
 
 ```java
 import java.time.Period;
@@ -46,7 +46,7 @@ class Person {
     }
 }
 
-class IsAdultPersonSpecification {
+class IsAdultPersonSpecification<T extends Person> {
 
     public final int limit;
 
@@ -54,7 +54,7 @@ class IsAdultPersonSpecification {
         this.limit = limit;
     }
 
-    public boolean isSatisfiedBy(Person candidate) {
+    public boolean isSatisfiedBy(T candidate) {
         return candidate.getAge() >= limit;
     }
 }
