@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class DisjunctionSpecificationTest extends CompositeSpecificationBase {
+public class DisjunctionSpecificationTest extends SpecificationTestBase {
 
 	/* 
 	 * True OR True = True

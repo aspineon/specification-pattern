@@ -2,20 +2,20 @@ package io.github.uetoyo.patterns.specification;
 
 import java.util.UUID;
 
-public class NegationSpecification<T> extends AbstractSpecification<T> {
+public class NegationSpecification<T> implements Specification<T> {
 	
-	Specification<T> specification; 
+	protected final Specification<T> spec; 
 	
-	protected NegationSpecification(UUID uniqueId, Specification<T> specification) {
-		this(specification);
+	public NegationSpecification(UUID uniqueId, Specification<T> spec) {
+		this(spec);
 	}
 	
-	protected NegationSpecification(Specification<T> specification) {
-		super(UUID.randomUUID());
-		this.specification = specification;
+	public NegationSpecification(Specification<T> spec) {
+		this.spec = spec;
 	}
-
+	
 	public boolean isSatisfiedBy(T candidate) {
-		return !specification.isSatisfiedBy(candidate);
+		return !spec.isSatisfiedBy(candidate);
 	}
+	
 }

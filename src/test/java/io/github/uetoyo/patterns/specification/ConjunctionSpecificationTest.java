@@ -7,14 +7,14 @@ import org.junit.Test;
 /**
  * Unit test for the `AND` specification.
  */
-public class ConjunctionSpecificationTest extends CompositeSpecificationBase {
+public class ConjunctionSpecificationTest extends SpecificationTestBase {
 
 	/* 
 	 * True AND True = True
 	 */
 	@Test
 	public void test_that_true_and_true_specification_returns_true() {
-		ConjunctionSpecification<Object> spec = new ConjunctionSpecification<Object>(ts, ts);
+		ConjunctionSpecification<Object> spec = new ConjunctionSpecification<>(ts, ts);
 		assertTrue(spec.isSatisfiedBy(new Object()));
 	}
 	
@@ -23,7 +23,7 @@ public class ConjunctionSpecificationTest extends CompositeSpecificationBase {
 	 */
 	@Test
 	public void test_that_true_and_false_specification_returns_false() {
-		ConjunctionSpecification<Object> spec = new ConjunctionSpecification<Object>(ts, fs);
+		ConjunctionSpecification<Object> spec = new ConjunctionSpecification<>(ts, fs);
 		assertFalse(spec.isSatisfiedBy(new Object()));
 	}
 	
@@ -32,7 +32,7 @@ public class ConjunctionSpecificationTest extends CompositeSpecificationBase {
 	 */
 	@Test
 	public void test_that_false_and_true_specification_returns_false() {
-		ConjunctionSpecification<Object> spec = new ConjunctionSpecification<Object>(fs, ts);
+		ConjunctionSpecification<Object> spec = new ConjunctionSpecification<>(fs, ts);
 		assertFalse(spec.isSatisfiedBy(new Object()));
 	}
 	
@@ -41,7 +41,7 @@ public class ConjunctionSpecificationTest extends CompositeSpecificationBase {
 	 */
 	@Test
 	public void test_that_false_and_false_specification_returns_false() {
-		ConjunctionSpecification<Object> spec = new ConjunctionSpecification<Object>(fs, fs);
+		ConjunctionSpecification<Object> spec = new ConjunctionSpecification<>(fs, fs);
 		assertFalse(spec.isSatisfiedBy(new Object()));
 	}
 }

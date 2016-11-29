@@ -1,18 +1,11 @@
 package io.github.uetoyo.patterns.specification;
 
-import java.util.UUID;
-
 /**
- * Specification
+ * Specification interface.
  * 
- * @param <T> domain entity type
+ * @param <T> the domain entity type
  */
 public interface Specification<T> {
-	
-	UUID getUniqueId();
-	
-	/**
-	 * {@inheritDoc}
-	 */
+
 	boolean isSatisfiedBy(T candidate);
 }
