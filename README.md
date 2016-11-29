@@ -6,8 +6,7 @@ This package is in active development but incomplete.
 
 ## Simple use case
 
-Whe have a person class with attributes brith day and we want to know if he is adult.
-
+Simple use case: We have a person class with a birthdate attribute and we want to know if he is an adult.
 The straigtforward approach is create the custom parametrized specification.
 
 ```java
