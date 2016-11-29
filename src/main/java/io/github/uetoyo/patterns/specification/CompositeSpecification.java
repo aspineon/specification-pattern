@@ -1,58 +1,37 @@
 package io.github.uetoyo.patterns.specification;
 
-import java.util.UUID;
 
 /**
- * Představuje kompozitní specifikaci, tj. takovou, kterou lze kombinovat.
+ * Composite specification.
  * 
  * @param <T>
  */
-public abstract class CompositeSpecification<T> extends AbstractSpecification<T> {
+public abstract class CompositeSpecification<T> implements Specification<T> {
 	
-	private final Specification<T> first;
-	private final Specification<T> second;
+	protected final Specification<T> spec1;
+	protected final Specification<T> spec2;
 	
 	/**
-	 * Creates a new composite specification with a given id.
+	 * Creates a new composite specification.
 	 *
 	 * @param uniqueId
 	 * @param first The first specification (left-hand side).
 	 * @param second The second specification (right-hand side).
 	 */
-	protected CompositeSpecification(UUID uniqueId, Specification<T> first, Specification<T> second) {
-		super(uniqueId);
-		this.first = first;
-		this.second = second;
+	protected CompositeSpecification(final Specification<T> spec1, final Specification<T> spec2) {
+		this.spec1 = spec1;
+		this.spec2 = spec2;
 	}
 	
-	/**
-	 * Creates a new composite specification with an auto generated id.
-	 * 
-	 * @param first The first specification (left-hand side).
-	 * @param second The second specification (right-hand side).
-	 */
-	protected CompositeSpecification(Specification<T> first, Specification<T> second) {
-		this(UUID.randomUUID(), first, second);
+	Specification<T> or(Specification<T> other) {
+		return new DisjunctionSpecification<T>(this, other);
 	}
 	
-	Specification<T> or(Specification<T> specification) {
-		return new DisjunctionSpecification<T>(this, specification);
+	Specification<T> and(Specification<T> other) {
+		return new ConjunctionSpecification<T>(this, other);
 	}
 	
-	Specification<T> and(Specification<T> specification) {
-		return new ConjunctionSpecification<T>(this, specification);
-	}
-	
-	Specification<T> not(Specification<T> specification) {
-		return new NegationSpecification<T>(specification);
-	}
-	
-	public Specification<T> getFirst() {
-		return first;
-	}
-	
-	public Specification<T> getSecond() {
-		return second;
-	}
-	
+	Specification<T> not(Specification<T> other) {
+		return new NegationSpecification<T>(other);
+	}	
 }
