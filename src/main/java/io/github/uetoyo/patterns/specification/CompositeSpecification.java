@@ -34,4 +34,9 @@ public abstract class CompositeSpecification<T> implements Specification<T> {
 	Specification<T> not(Specification<T> other) {
 		return new NegationSpecification<T>(other);
 	}	
+	
+	 /**
+	   * {@inheritDoc}
+	   */
+	 public abstract boolean isSatisfiedBy(T t);
 }
