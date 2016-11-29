@@ -8,13 +8,13 @@ public class NegationSpecificationTest extends SpecificationTestBase {
 
 	@Test
 	public void test_that_negation_returns_false() {
-		NegationSpecification<Object> spec = new NegationSpecification<Object>(ts);
+		NegationSpecification<Object> spec = new NegationSpecification<>(ts);
 		assertFalse(spec.isSatisfiedBy(new Object()));
 	}
 	
 	@Test
 	public void test_that_negation_returns_true() {
-		NegationSpecification<Object> spec = new NegationSpecification<Object>(fs);
+		NegationSpecification<Object> spec = new NegationSpecification<>(fs);
 		assertTrue(spec.isSatisfiedBy(new Object()));
 	}
 }

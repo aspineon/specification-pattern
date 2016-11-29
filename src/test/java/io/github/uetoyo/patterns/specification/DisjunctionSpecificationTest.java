@@ -11,7 +11,7 @@ public class DisjunctionSpecificationTest extends SpecificationTestBase {
 	 */
 	@Test
 	public void test_that_true_or_true_specification_returns_true() {
-		DisjunctionSpecification<Object> spec = new DisjunctionSpecification<Object>(ts, ts);
+		DisjunctionSpecification<Object> spec = new DisjunctionSpecification<>(ts, ts);
 		assertTrue(spec.isSatisfiedBy(new Object()));
 	}
 	
@@ -20,7 +20,7 @@ public class DisjunctionSpecificationTest extends SpecificationTestBase {
 	 */
 	@Test
 	public void test_that_true_or_false_specification_returns_true() {
-		DisjunctionSpecification<Object> spec = new DisjunctionSpecification<Object>(ts, fs);
+		DisjunctionSpecification<Object> spec = new DisjunctionSpecification<>(ts, fs);
 		assertTrue(spec.isSatisfiedBy(new Object()));
 	}
 	
@@ -29,7 +29,7 @@ public class DisjunctionSpecificationTest extends SpecificationTestBase {
 	 */
 	@Test
 	public void test_that_false_or_true_specification_returns_true() {
-		DisjunctionSpecification<Object> spec = new DisjunctionSpecification<Object>(fs, ts);
+		DisjunctionSpecification<Object> spec = new DisjunctionSpecification<>(fs, ts);
 		assertTrue(spec.isSatisfiedBy(new Object()));
 	}
 	
@@ -38,7 +38,7 @@ public class DisjunctionSpecificationTest extends SpecificationTestBase {
 	 */
 	@Test
 	public void test_that_false_or_false_specification_returns_false() {
-		DisjunctionSpecification<Object> spec = new DisjunctionSpecification<Object>(fs, fs);
+		DisjunctionSpecification<Object> spec = new DisjunctionSpecification<>(fs, fs);
 		assertFalse(spec.isSatisfiedBy(new Object()));
 	}
 	
