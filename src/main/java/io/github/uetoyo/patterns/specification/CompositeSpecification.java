@@ -19,6 +19,9 @@ public abstract class CompositeSpecification<T> implements Specification<T> {
 	 * @param second The second specification (right-hand side).
 	 */
 	protected CompositeSpecification(final Specification<T> spec1, final Specification<T> spec2) {
+		if (spec1 == null || spec2 == null) {
+			throw new IllegalArgumentException("The `null` value is not allowed!");
+		}
 		this.spec1 = spec1;
 		this.spec2 = spec2;
 	}
