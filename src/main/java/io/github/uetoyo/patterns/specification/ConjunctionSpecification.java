@@ -9,6 +9,9 @@ public final class ConjunctionSpecification<T> extends CompositeSpecification<T>
 		super(spec1, spec2);
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 */
 	public boolean isSatisfiedBy(final T candidate) {
 		return spec1.isSatisfiedBy(candidate) && spec2.isSatisfiedBy(candidate);
 	}

@@ -7,4 +7,9 @@ public abstract class LeafSpecification<T> implements Specification<T> {
 	protected LeafSpecification(Specification<T> spec) {
 		this.spec = spec;
 	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	public abstract boolean isSatisfiedBy(final T candidate);
 }

@@ -36,7 +36,7 @@ public abstract class CompositeSpecification<T> implements Specification<T> {
 	}	
 	
 	 /**
-	   * {@inheritDoc}
-	   */
+	  * {@inheritDoc}
+	  */
 	 public abstract boolean isSatisfiedBy(T t);
 }
