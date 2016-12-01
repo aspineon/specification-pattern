@@ -1,6 +1,6 @@
 # Specification Pattern
 
-[![Build Status](https://travis-ci.org/uetoyo/specification-pattern-java.svg?branch=master)](https://travis-ci.org/uetoyo/specification-pattern-java)
+[![Build Status](https://travis-ci.org/uetoyo/fluent-specification.svg?branch=master)](https://travis-ci.org/uetoyo/fluent-specification)
 
 This package is in active development but incomplete.
 
