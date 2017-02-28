@@ -1,25 +1,18 @@
 package io.github.uetoyo.patterns.specification;
 
-public abstract class UnaryCompositeSpecification<T> implements Specification<T> {
-	
-	private final Specification<T> spec;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public abstract class UnaryCompositeSpecification<T> extends CompositeSpecification<T> {
 	
 	/**
 	 * The unary composite specification.
 	 * 
-	 * @param spec The inner specification.
+	 * @param specification The inner specification.
 	 */
-	protected UnaryCompositeSpecification(final Specification<T> spec) {
-		if (spec == null) {
-			throw new IllegalArgumentException("The `null` value is not allowed!");
-		}
-		this.spec = spec;
+	protected UnaryCompositeSpecification(final Specification<T> specification) {
+		super(new ArrayList<Specification<T>>(Arrays.asList(specification)));
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	public abstract boolean isSatisfiedBy(final T candidate);
 	
 	/**
 	 * Gets the inner specification.
@@ -27,6 +20,6 @@ public abstract class UnaryCompositeSpecification<T> implements Specification<T>
 	 * @return The inner specification.
 	 */
 	public Specification<T> getSpecification() {
-		return spec;
+		return getSpecifications().get(0);
 	}
 }
