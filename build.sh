@@ -1,4 +1,4 @@
 #!/bin/sh
 
 # Generate Java documentation
-mvn 
+mvn javadoc:javadoc
