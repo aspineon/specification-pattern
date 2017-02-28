@@ -12,11 +12,16 @@ abstract class CompositeSpecification<T> implements Specification<T> {
 	
 	private final ArrayList<Specification<T>> specifications;
 	
-	public CompositeSpecification(final ArrayList<Specification<T>> specifications) {
+	protected CompositeSpecification(final ArrayList<Specification<T>> specifications) {
 		this.specifications = checkNotNull(specifications);
 	}
 	
-	protected List<Specification<T>> getSpecifications() {
+	/**
+	 * Gets the inner specifications.
+	 * 
+	 * @return The inner specifications.
+	 */
+	public List<Specification<T>> getSpecifications() {
 		return specifications;
 	}
 }
