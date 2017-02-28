@@ -6,7 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The composite specification is composed form zero or more specifications.
+ * The composite specification is composed from zero or more specifications.
+ * 
+ * @param <T> The type of entity for which the specification is defined.
  */
 abstract class CompositeSpecification<T> implements Specification<T> {
 	
