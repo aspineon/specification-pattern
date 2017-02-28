@@ -7,13 +7,13 @@ import org.junit.Test;
 public class NegationSpecificationTest extends SpecificationTestBase {
 
 	@Test
-	public void test_that_negation_returns_false() {
+	public void testThatNegationReturnsFalse() {
 		NegationSpecification<Object> spec = new NegationSpecification<>(ts);
 		assertFalse(spec.isSatisfiedBy(new Object()));
 	}
 	
 	@Test
-	public void test_that_negation_returns_true() {
+	public void testThatNegationReturnsTrue() {
 		NegationSpecification<Object> spec = new NegationSpecification<>(fs);
 		assertTrue(spec.isSatisfiedBy(new Object()));
 	}

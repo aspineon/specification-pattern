@@ -1,6 +1,7 @@
 package io.github.uetoyo.patterns.specification;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -10,7 +11,7 @@ public class DisjunctionSpecificationTest extends SpecificationTestBase {
 	 * True OR True = True
 	 */
 	@Test
-	public void test_that_true_or_true_specification_returns_true() {
+	public void testThatTrueOrTrueSpecificationReturnsTrue() {
 		DisjunctionSpecification<Object> spec = new DisjunctionSpecification<>(ts, ts);
 		assertTrue(spec.isSatisfiedBy(new Object()));
 	}
@@ -19,7 +20,7 @@ public class DisjunctionSpecificationTest extends SpecificationTestBase {
 	 * True OR False = True
 	 */
 	@Test
-	public void test_that_true_or_false_specification_returns_true() {
+	public void testThatTrueOrFalseSpecificationReturnsTrue() {
 		DisjunctionSpecification<Object> spec = new DisjunctionSpecification<>(ts, fs);
 		assertTrue(spec.isSatisfiedBy(new Object()));
 	}
@@ -28,7 +29,7 @@ public class DisjunctionSpecificationTest extends SpecificationTestBase {
 	 * False OR True = True
 	 */
 	@Test
-	public void test_that_false_or_true_specification_returns_true() {
+	public void testThatFalseOrTrueSpecificationReturnsTrue() {
 		DisjunctionSpecification<Object> spec = new DisjunctionSpecification<>(fs, ts);
 		assertTrue(spec.isSatisfiedBy(new Object()));
 	}
@@ -37,7 +38,7 @@ public class DisjunctionSpecificationTest extends SpecificationTestBase {
 	 * False AND False = False
 	 */
 	@Test
-	public void test_that_false_or_false_specification_returns_false() {
+	public void testThatFalseOrFalseSpecificationReturnsFalse() {
 		DisjunctionSpecification<Object> spec = new DisjunctionSpecification<>(fs, fs);
 		assertFalse(spec.isSatisfiedBy(new Object()));
 	}
