@@ -5,7 +5,7 @@ package io.github.uetoyo.patterns.specification;
  */
 public class SpecificationTestBase {
 
-	protected final AlwaysTrueSpecification ts = new AlwaysTrueSpecification();
-	protected final AlwaysFalseSpecification fs = new AlwaysFalseSpecification();
+	protected final AlwaysTrueSpecification<Object> ts = new AlwaysTrueSpecification<Object>();
+	protected final AlwaysFalseSpecification<Object> fs = new AlwaysFalseSpecification<Object>();
 	
 }

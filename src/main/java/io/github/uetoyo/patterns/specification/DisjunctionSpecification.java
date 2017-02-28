@@ -1,9 +1,11 @@
 package io.github.uetoyo.patterns.specification;
 
-/* 
+/**
  * Conjunction specification represents the logical OR.
+ *
+ * @param <T> The type of entity for which the specification is defined.
  */
-public final class DisjunctionSpecification<T> extends CompositeSpecification<T> {
+final class DisjunctionSpecification<T> extends BinaryCompositeSpecification<T> {
 	
 	public DisjunctionSpecification(final Specification<T> spec1, final Specification<T> spec2) {
 		super(spec1, spec2);
@@ -12,7 +14,8 @@ public final class DisjunctionSpecification<T> extends CompositeSpecification<T>
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean isSatisfiedBy(final T candidate) {
-		return spec1.isSatisfiedBy(candidate) || spec2.isSatisfiedBy(candidate);
+		return getSpecificationOne().isSatisfiedBy(candidate) || getSpecificationTwo().isSatisfiedBy(candidate);
 	}
 }

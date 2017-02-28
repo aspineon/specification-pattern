@@ -1,18 +1,21 @@
 package io.github.uetoyo.patterns.specification;
 
-public class NegationSpecification<T> implements Specification<T> {
+/**
+ * The negation specification.
+ *
+ * @param <T> The entity type for which the specification is defined.
+ */
+final class NegationSpecification<T> extends UnaryCompositeSpecification<T> {
 	
-	protected final Specification<T> spec; 
-	
-	public NegationSpecification(Specification<T> spec) {
-		if (spec == null) {
-			throw new IllegalArgumentException("The `null` value is not allowed!");
-		}
-		this.spec = spec;
+	public NegationSpecification(final Specification<T> specification) {
+		super(specification);
 	}
 	
-	public boolean isSatisfiedBy(T candidate) {
-		return !spec.isSatisfiedBy(candidate);
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public boolean isSatisfiedBy(final T candidate) {
+		return ! getSpecification().isSatisfiedBy(candidate);
 	}
-	
 }
