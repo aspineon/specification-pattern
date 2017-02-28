@@ -3,10 +3,15 @@ package io.github.uetoyo.patterns.specification;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * The unary composite specification.
+ *
+ * @param <T> The type of entity for which the specification is defined.
+ */
 public abstract class UnaryCompositeSpecification<T> extends CompositeSpecification<T> {
 	
 	/**
-	 * The unary composite specification.
+	 * Creates the unary composite specification.
 	 * 
 	 * @param specification The inner specification.
 	 */

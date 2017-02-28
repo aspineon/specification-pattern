@@ -3,7 +3,7 @@ package io.github.uetoyo.patterns.specification;
 /**
  * Specification interface.
  * 
- * @param <T> the domain entity type
+ * @param <T> The domain entity type.
  */
 public interface Specification<T> {
 
