@@ -2,10 +2,9 @@
 
 [![Build Status](https://travis-ci.org/uetoyo/specific.java.svg?branch=master)](https://travis-ci.org/uetoyo/specific.java)
 
-This package is in active development but incomplete.
-
 ## Simple use case
 
+<s>
 Simple use case: We have a person class with a birthdate attribute and we want to know if he is an adult.
 The straigtforward approach is create the custom parametrized specification.
 
@@ -58,3 +57,4 @@ class IsAdultPersonSpecification<T extends Person> {
     }
 }
 ```
+</s>
