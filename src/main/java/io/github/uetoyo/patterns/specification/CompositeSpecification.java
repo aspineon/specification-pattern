@@ -1,45 +1,29 @@
 package io.github.uetoyo.patterns.specification;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Composite specification.
+ * The composite specification is composed from zero or more specifications.
  * 
- * @param <T>
+ * @param <T> The type of entity for which the specification is defined.
  */
-public abstract class CompositeSpecification<T> implements Specification<T> {
+abstract class CompositeSpecification<T> implements Specification<T> {
 	
-	protected final Specification<T> spec1;
-	protected final Specification<T> spec2;
+	private final ArrayList<Specification<T>> specifications;
+	
+	protected CompositeSpecification(final ArrayList<Specification<T>> specifications) {
+		this.specifications = checkNotNull(specifications);
+	}
 	
 	/**
-	 * Creates a new composite specification.
-	 *
-	 * @param uniqueId
-	 * @param first The first specification (left-hand side).
-	 * @param second The second specification (right-hand side).
+	 * Gets the inner specifications.
+	 * 
+	 * @return The inner specifications.
 	 */
-	protected CompositeSpecification(final Specification<T> spec1, final Specification<T> spec2) {
-		if (spec1 == null || spec2 == null) {
-			throw new IllegalArgumentException("The `null` value is not allowed!");
-		}
-		this.spec1 = spec1;
-		this.spec2 = spec2;
+	public List<Specification<T>> getSpecifications() {
+		return specifications;
 	}
-	
-	Specification<T> or(Specification<T> other) {
-		return new DisjunctionSpecification<T>(this, other);
-	}
-	
-	Specification<T> and(Specification<T> other) {
-		return new ConjunctionSpecification<T>(this, other);
-	}
-	
-	Specification<T> not(Specification<T> other) {
-		return new NegationSpecification<T>(other);
-	}	
-	
-	 /**
-	  * {@inheritDoc}
-	  */
-	 public abstract boolean isSatisfiedBy(T t);
 }
