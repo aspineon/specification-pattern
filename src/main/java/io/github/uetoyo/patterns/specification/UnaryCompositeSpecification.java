@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * The unary composite specification.
+ * The specification with one component.
  *
  * @param <T> The type of entity for which the specification is defined.
  */

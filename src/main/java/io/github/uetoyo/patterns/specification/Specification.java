@@ -1,9 +1,9 @@
 package io.github.uetoyo.patterns.specification;
 
 /**
- * Specification interface.
+ * The specification fluid interface.
  * 
- * @param <T> The domain entity type.
+ * @param <T> The type of entity for which the specification is defined.
  */
 public interface Specification<T> {
 

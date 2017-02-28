@@ -1,11 +1,14 @@
 package io.github.uetoyo.patterns.specification;
 
-/*
- * This is the helper class which always returns `true`.
+/**
+ * This is the specification which always returns `false`.
+ * 
+ * @param <T> The type of entity for which the specification is defined.
  */
-public class AlwaysFalseSpecification implements Specification<Object> {
-
-	public boolean isSatisfiedBy(Object candidate) {
+public class AlwaysFalseSpecification<T> implements Specification<T> {
+	
+	@Override
+	public boolean isSatisfiedBy(T candidate) {
 		return false;
 	}
 }
