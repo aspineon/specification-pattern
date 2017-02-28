@@ -2,19 +2,21 @@
 
 [![Build Status](https://travis-ci.org/uetoyo/specific.java.svg?branch=master)](https://travis-ci.org/uetoyo/specific.java)
 
-The specification pattern as described by by Eric Evans and Martin Fowler.
+The specification pattern as described by *Eric Evans* and *Martin Fowler*.
 
-## Description of the pattern
+## Overviev of the pattern
 
-...
-
-### Leaf specification
-
-...
+### Leaf Specification
 
 ### Composite Specification
 
-...
+#### Nullary Composite Specification
+
+#### Unary Composite Specification
+
+#### Binary Composite Specification
+
+#### Multiary Composite specification
 
 ## References
 
