@@ -1,7 +1,7 @@
 package io.github.uetoyo.patterns.specification;
 
 /**
- * The specification fluid interface.
+ * The composite specification fluid interface.
  * 
  * @param <T> The type of entity for which the specification is defined.
  */
@@ -16,7 +16,7 @@ public interface Specification<T> {
 	boolean isSatisfiedBy(T candidate);
 	
 	/**
-	 * Returns the new disjunction specification.
+	 * Returns the new disjunction specification composed from this and other specifications.
 	 * 
 	 * @param other The right-hand side specification.
 	 * @return The new disjunction specification.
@@ -26,7 +26,7 @@ public interface Specification<T> {
 	}
 
 	/**
-	 * Returns the new conjunction specification.
+	 * Returns the new conjunction specification composed from this and other specifications.
 	 * 
 	 * @param other The right-hand side specification.
 	 * @return The new conjunction specification.
@@ -36,7 +36,7 @@ public interface Specification<T> {
 	}
 	
 	/**
-	 * Returns the new negation specification.
+	 * Returns the new negation specification composed from this specification.
 	 * 
 	 * @param other The specification.
 	 * @return The new negation specification.
