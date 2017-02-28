@@ -1,5 +1,7 @@
 package io.github.uetoyo.patterns.specification;
 
+import java.util.function.Predicate;
+
 /**
  * The composite specification fluid interface.
  * 
@@ -43,5 +45,14 @@ public interface Specification<T> {
 	 */
 	default Specification<T> not() {
 		return new NegationSpecification<T>(this);
-	}	
+	}
+	
+	/**
+	 * Returns this specification as predicate.
+	 * 
+	 * @return The specification as predicate.
+	 */
+	default Predicate<T> toPredicate() {
+		return  (candidate) -> isSatisfiedBy(candidate);
+	}
 }
