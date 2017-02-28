@@ -2,6 +2,8 @@ package io.github.uetoyo.patterns.specification;
 
 import java.util.function.Predicate;
 
+import io.github.uetoyo.patterns.specification.annotations.Factory;
+
 /**
  * The composite specification fluid interface.
  * 
@@ -54,5 +56,33 @@ public interface Specification<T> {
 	 */
 	default Predicate<T> toPredicate() {
 		return  (candidate) -> isSatisfiedBy(candidate);
+	}
+	
+	/* TODO
+	 * Creates the specification for specified class.
+	 * All objects which are instances of that class or subclass satisfied this specification.
+	 * 
+	 * @param clazz
+	 */
+	//static void createSpecificationFor(Class<?> type) {}
+	
+	/**
+	 * Creates the always false specification for the given type.
+	 * 
+	 * @return The always false specification.
+	 */
+	@Factory
+	static <T> AlwaysFalseSpecification<T> createAlwaysFalseSpecification() {
+		return new AlwaysFalseSpecification<T>();
+	}
+	
+	/**
+	 * Creates the always false specification for the given type.
+	 * 
+	 * @return The always true specification.
+	 */
+	@Factory
+	static <T> AlwaysTrueSpecification<T> createAlwaysTrueSpecification() {
+		return new AlwaysTrueSpecification<T>();
 	}
 }
