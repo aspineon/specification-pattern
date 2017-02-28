@@ -26,41 +26,6 @@ public abstract class BinaryCompositeSpecification<T> implements Specification<T
 	}
 	
 	/**
-	 * Returns the new disjunction specification.
-	 * 
-	 * @param other The right-hand side specification.
-	 * @return The new disjunction specification.
-	 */
-	Specification<T> or(final Specification<T> other) {
-		return new DisjunctionSpecification<T>(this, other);
-	}
-
-	/**
-	 * Returns the new conjunction specification.
-	 * 
-	 * @param other The right-hand side specification.
-	 * @return The new conjunction specification.
-	 */
-	Specification<T> and(final Specification<T> other) {
-		return new ConjunctionSpecification<T>(this, other);
-	}
-	
-	/**
-	 * Returns the new negation specification.
-	 * 
-	 * @param other The specification.
-	 * @return The new negation specification.
-	 */
-	Specification<T> not() {
-		return new NegationSpecification<T>(this);
-	}	
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	public abstract boolean isSatisfiedBy(final T t);
-	
-	/**
 	 * Returns the left-hand side specification.
 	 * @return The left-hand side specification.
 	 */
