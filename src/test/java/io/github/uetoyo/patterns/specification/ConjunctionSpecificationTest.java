@@ -9,14 +9,16 @@ import org.junit.Test;
  * Unit test for the `AND` specification.
  */
 public class ConjunctionSpecificationTest extends SpecificationTestBase {
-
+		
+	private static Object fake = new Object();
+	
 	/* 
 	 * True AND True = True
 	 */
 	@Test
 	public void testThatTrueAndTrueSpecificationReturnsTrue() {
 		ConjunctionSpecification<Object> spec = new ConjunctionSpecification<>(ts, ts);
-		assertTrue(spec.isSatisfiedBy(new Object()));
+		assertTrue(spec.isSatisfiedBy(fake));
 	}
 	
 	/*
@@ -25,7 +27,7 @@ public class ConjunctionSpecificationTest extends SpecificationTestBase {
 	@Test
 	public void testThatTrueAndFalseSpecificationReturnsFalse() {
 		ConjunctionSpecification<Object> spec = new ConjunctionSpecification<>(ts, fs);
-		assertFalse(spec.isSatisfiedBy(new Object()));
+		assertFalse(spec.isSatisfiedBy(fake));
 	}
 	
 	/*
@@ -34,7 +36,7 @@ public class ConjunctionSpecificationTest extends SpecificationTestBase {
 	@Test
 	public void testThatFalseAndTrueSpecificationReturnsFalse() {
 		ConjunctionSpecification<Object> spec = new ConjunctionSpecification<>(fs, ts);
-		assertFalse(spec.isSatisfiedBy(new Object()));
+		assertFalse(spec.isSatisfiedBy(fake));
 	}
 	
 	/*
@@ -43,6 +45,16 @@ public class ConjunctionSpecificationTest extends SpecificationTestBase {
 	@Test
 	public void testThatFalseAndFalseSpecificationReturnsFalse() {
 		ConjunctionSpecification<Object> spec = new ConjunctionSpecification<>(fs, fs);
-		assertFalse(spec.isSatisfiedBy(new Object()));
+		assertFalse(spec.isSatisfiedBy(fake));
 	}
+	
+	/*
+	 * To predicate conversion.
+	 */
+	@Test 
+	public void shouldReturnSpecificationAsPredicate() {
+		ConjunctionSpecification<Object> spec = new ConjunctionSpecification<>(ts, ts);
+		assertTrue(spec.toPredicate().test(fake));
+	}
+
 }
