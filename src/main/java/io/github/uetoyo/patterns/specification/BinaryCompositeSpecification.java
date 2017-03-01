@@ -3,11 +3,14 @@ package io.github.uetoyo.patterns.specification;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import io.github.uetoyo.patterns.specification.annotations.Immutable;
+
 /**
  * The binary composite specification.
  * 
  * @param <T> The type of entity for which the specification is defined.
  */
+@Immutable
 public abstract class BinaryCompositeSpecification<T> extends CompositeSpecification<T> {
 	
 	/**
