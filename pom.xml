@@ -45,11 +45,11 @@
 			<id>specification-pattern-mvn-repo</id>
 			<url>https://raw.github.com/uetoyo/specification-pattern/mvn-repo/</url>
 			<snapshots>
-			<enabled>true</enabled>
-			<updatePolicy>always</updatePolicy>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
 			</snapshots>
 		</repository>
-	</repositories>-->
+	</repositories>
 
 	<build>
 		<plugins>
