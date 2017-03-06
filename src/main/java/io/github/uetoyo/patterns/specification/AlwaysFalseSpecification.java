@@ -7,9 +7,7 @@ import java.util.Objects;
  * 
  * @param <T> The type of entity for which the specification is defined.
  */
-public class AlwaysFalseSpecification<T> implements Specification<T> {
-	
-	protected AlwaysFalseSpecification() { }
+final class AlwaysFalseSpecification<T> extends NullaryCompositeSpecification<T> {
 	
 	@Override
 	public boolean isSatisfiedBy(T candidate) {
