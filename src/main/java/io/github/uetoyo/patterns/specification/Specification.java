@@ -18,7 +18,7 @@ public interface Specification<T> {
 	 * @param candidate an object to test.
 	 * @return {@code true} if the candidate satisfies the specification otherwise {@code false}
 	 */ 
-	boolean isSatisfiedBy(T candidate);
+	public boolean isSatisfiedBy(T candidate);
 	
 	/**
 	 * Returns the new disjunction specification composed from this and other specification.
@@ -26,7 +26,7 @@ public interface Specification<T> {
 	 * @param other The right-hand side specification.
 	 * @return The new disjunction specification.
 	 */
-	default Specification<T> or(final Specification<T> other) {
+	public default Specification<T> or(final Specification<T> other) {
 		return new DisjunctionSpecification<T>(this, other);
 	}
 
@@ -36,7 +36,7 @@ public interface Specification<T> {
 	 * @param other The right-hand side specification.
 	 * @return The new conjunction specification.
 	 */
-	default Specification<T> and(final Specification<T> other) {
+	public default Specification<T> and(final Specification<T> other) {
 		return new ConjunctionSpecification<T>(this, other);
 	}
 	
@@ -46,7 +46,7 @@ public interface Specification<T> {
 	 * @param other The specification.
 	 * @return The new negation specification.
 	 */
-	default Specification<T> not() {
+	public default Specification<T> not() {
 		return new NegationSpecification<T>(this);
 	}
 	
@@ -55,7 +55,7 @@ public interface Specification<T> {
 	 * 
 	 * @return The specification as predicate.
 	 */
-	default Predicate<T> toPredicate() {
+	public default Predicate<T> toPredicate() {
 		return  (candidate) -> isSatisfiedBy(candidate);
 	}
 	
@@ -73,7 +73,7 @@ public interface Specification<T> {
 	 * @return The always false specification.
 	 */
 	@Factory
-	static <T> AlwaysFalseSpecification<T> createAlwaysFalseSpecification() {
+	public static <T> AlwaysFalseSpecification<T> createAlwaysFalseSpecification() {
 		return new AlwaysFalseSpecification<T>();
 	}
 	
@@ -83,7 +83,7 @@ public interface Specification<T> {
 	 * @return The always true specification.
 	 */
 	@Factory
-	static <T> AlwaysTrueSpecification<T> createAlwaysTrueSpecification() {
+	public static <T> AlwaysTrueSpecification<T> createAlwaysTrueSpecification() {
 		return new AlwaysTrueSpecification<T>();
 	}
 	
@@ -95,7 +95,7 @@ public interface Specification<T> {
 	 * @return The new conjunction specification.
 	 */
 	@Factory
-	static <T> ConjunctionSpecification<T> createConjunctionSpecification(
+	public static <T> ConjunctionSpecification<T> createConjunctionSpecification(
 			Specification<T> spec1, Specification<T> spec2) {
 		return new ConjunctionSpecification<T>(spec1, spec2);
 	}
@@ -108,7 +108,7 @@ public interface Specification<T> {
 	 * @return The new disjunction specification.
 	 */
 	@Factory
-	static <T> DisjunctionSpecification<T> createDisjunctionSpecification(
+	public static <T> DisjunctionSpecification<T> createDisjunctionSpecification(
 			Specification<T> spec1, Specification<T> spec2) {
 		return new DisjunctionSpecification<T>(spec1, spec2);
 	}
@@ -120,7 +120,7 @@ public interface Specification<T> {
 	 * @return The new negation specification.
 	 */
 	@Factory
-	static <T> NegationSpecification<T> createNegationSpecification(Specification<T> spec) {
+	public static <T> NegationSpecification<T> createNegationSpecification(Specification<T> spec) {
 		return new NegationSpecification<T>(spec);
 	}
 }
