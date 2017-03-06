@@ -5,6 +5,8 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import io.github.uetoyo.patterns.specification.ConjunctionSpecification;
+
 /**
  * Unit test for the `AND` specification.
  */
