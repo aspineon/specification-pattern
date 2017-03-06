@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import io.github.uetoyo.patterns.specification.NegationSpecification;
+
 public class NegationSpecificationTest extends SpecificationTestBase {
 
 	@Test
