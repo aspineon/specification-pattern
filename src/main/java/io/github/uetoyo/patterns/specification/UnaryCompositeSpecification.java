@@ -3,12 +3,15 @@ package io.github.uetoyo.patterns.specification;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import io.github.uetoyo.patterns.specification.protocols.Immutable;
+
 /**
  * The specification with one component.
  *
  * @param <T> The type of entity for which the specification is defined.
  */
-public abstract class UnaryCompositeSpecification<T> extends CompositeSpecification<T> {
+@Immutable
+abstract class UnaryCompositeSpecification<T> extends CompositeSpecification<T> {
 	
 	/**
 	 * Creates the unary composite specification.

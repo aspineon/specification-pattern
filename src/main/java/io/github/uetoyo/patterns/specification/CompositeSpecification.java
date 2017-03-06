@@ -8,11 +8,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import io.github.uetoyo.patterns.specification.protocols.Immutable;
+
 /**
  * The composite specification is composed from zero or more specifications.
  * 
  * @param <T> The type of entity for which the specification is defined.
  */
+@Immutable
 abstract class CompositeSpecification<T> implements Specification<T> {
 	
 	private final ArrayList<Specification<T>> specifications;

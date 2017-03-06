@@ -11,7 +11,7 @@ import io.github.uetoyo.patterns.specification.protocols.Immutable;
  * @param <T> The type of entity for which the specification is defined.
  */
 @Immutable
-public abstract class BinaryCompositeSpecification<T> extends CompositeSpecification<T> {
+abstract class BinaryCompositeSpecification<T> extends CompositeSpecification<T> {
 	
 	/**
 	 * Creates the binary composite specification.
