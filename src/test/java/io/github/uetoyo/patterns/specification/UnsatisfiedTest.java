@@ -6,6 +6,10 @@ import java.util.Set;
 
 import org.junit.Test;
 
+import io.github.uetoyo.patterns.specification.CompositeSpecification;
+import io.github.uetoyo.patterns.specification.ConjunctionSpecification;
+import io.github.uetoyo.patterns.specification.Specification;
+
 public class UnsatisfiedTest extends SpecificationTestBase {
 	
 	@Test
