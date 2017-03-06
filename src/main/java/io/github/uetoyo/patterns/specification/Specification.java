@@ -11,7 +11,6 @@ import io.github.uetoyo.patterns.specification.protocols.Factory;
  */
 public interface Specification<T> {
 
-
 	/**
 	 * Check if the {@code candidate} is satisfied by the specification.
 	 *
@@ -86,33 +85,7 @@ public interface Specification<T> {
 	public static <T> AlwaysTrueSpecification<T> createAlwaysTrueSpecification() {
 		return new AlwaysTrueSpecification<T>();
 	}
-	
-	/**
-	 * Creates the conjunction specification.
-	 * 
-	 * @param spec1 The left-hand side specification.
-	 * @param spec2 The right-hand side specification.
-	 * @return The new conjunction specification.
-	 */
-	@Factory
-	public static <T> ConjunctionSpecification<T> createConjunctionSpecification(
-			Specification<T> spec1, Specification<T> spec2) {
-		return new ConjunctionSpecification<T>(spec1, spec2);
-	}
-	
-	/**
-	 * Creates the disjunction specification.
-	 * 
-	 * @param spec1 The left-hand side specification.
-	 * @param spec2 The right-hand side specification.
-	 * @return The new disjunction specification.
-	 */
-	@Factory
-	public static <T> DisjunctionSpecification<T> createDisjunctionSpecification(
-			Specification<T> spec1, Specification<T> spec2) {
-		return new DisjunctionSpecification<T>(spec1, spec2);
-	}
-	
+
 	/**
 	 * Creates the negation specification.
 	 * 
@@ -122,5 +95,41 @@ public interface Specification<T> {
 	@Factory
 	public static <T> NegationSpecification<T> createNegationSpecification(Specification<T> spec) {
 		return new NegationSpecification<T>(spec);
+	}
+	
+	/**
+	 * Creates the conjunction specification.
+	 * 
+	 * @param spec1 The left-hand side specification.
+	 * @param spec2 The right-hand side specification.
+	 * @return The new conjunction specification.
+	 */
+	@Factory
+	@SafeVarargs
+	public static <T> Specification<T> all(final Specification<T> spec1, final Specification<T> spec2, final Specification<T>... specs) 
+	{
+		Specification<T> all = new ConjunctionSpecification<T>(spec1, spec2);
+		for (Specification<T> spec : specs) {
+			all = all.and(spec);
+		}
+		return all;
+	}
+	
+	/**
+	 * Creates the disjunction specification.
+	 * 
+	 * @param spec1 The left-hand side specification.
+	 * @param spec2 The right-hand side specification.
+	 * @return The new disjunction specification.
+	 */
+	@SafeVarargs
+	@Factory
+	public static <T> Specification<T> any(final Specification<T> spec1, final Specification<T> spec2, final Specification<T>... specs) 
+	{
+		Specification<T> any = new DisjunctionSpecification<T>(spec1, spec2);
+		for (Specification<T> spec : specs) {
+			any = any.or(spec);
+		}
+		return  any;
 	}
 }
