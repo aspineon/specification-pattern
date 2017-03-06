@@ -35,7 +35,7 @@ abstract class CompositeSpecification<T> implements Specification<T> {
 	 * 
 	 * @return The inner unsatisfied specifications.
 	 */
-	Set<Specification<T>> getUnsatisfiedSpecificationsFor(final T candidate) {
+	public Set<Specification<T>> getUnsatisfiedSpecificationsFor(final T candidate) {
 		
 		Set<Specification<T>> unsatisfied = new HashSet<>();
 		for (Specification<T> specification : getSpecifications()) {
