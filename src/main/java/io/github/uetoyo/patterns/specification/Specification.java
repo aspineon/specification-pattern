@@ -20,7 +20,7 @@ public interface Specification<T> {
 	boolean isSatisfiedBy(T candidate);
 	
 	/**
-	 * Returns the new disjunction specification composed from this and other specifications.
+	 * Returns the new disjunction specification composed from this and other specification.
 	 * 
 	 * @param other The right-hand side specification.
 	 * @return The new disjunction specification.
@@ -30,7 +30,7 @@ public interface Specification<T> {
 	}
 
 	/**
-	 * Returns the new conjunction specification composed from this and other specifications.
+	 * Returns the new conjunction specification composed from this and other specification.
 	 * 
 	 * @param other The right-hand side specification.
 	 * @return The new conjunction specification.
