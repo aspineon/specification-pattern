@@ -3,7 +3,7 @@ package io.github.uetoyo.patterns.specification;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import io.github.uetoyo.patterns.specification.annotations.Immutable;
+import io.github.uetoyo.patterns.specification.protocols.Immutable;
 
 /**
  * The binary composite specification.

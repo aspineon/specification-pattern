@@ -1,4 +1,4 @@
-package io.github.uetoyo.patterns.specification.annotations;
+package io.github.uetoyo.patterns.specification.protocols;
 
 import static java.lang.annotation.ElementType.METHOD;
 
