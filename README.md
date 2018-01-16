@@ -13,7 +13,7 @@ The installation of the package is possible via [JitPack](https://jitpack.io/#ue
 
 **Step 1**. Add the repository to your build file
 
-```bash
+```xml
 <repositories>
     <repository>
         <id>jitpack.io</id>
@@ -24,7 +24,7 @@ The installation of the package is possible via [JitPack](https://jitpack.io/#ue
 
 **Step 2.** Add the latest release dependency
 
-```bash
+```xml
 <dependency>
     <groupId>com.github.uetoyo</groupId>
     <artifactId>specification</artifactId>
