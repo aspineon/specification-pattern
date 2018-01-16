@@ -1,5 +1,6 @@
 package io.github.uetoyo.patterns.specification;
 
+import java.util.Objects;
 import java.util.function.Predicate;
 
 import io.github.uetoyo.patterns.specification.protocols.Factory;
@@ -26,6 +27,7 @@ public interface Specification<T> {
 	 * @return The new disjunction specification.
 	 */
 	public default Specification<T> or(final Specification<T> other) {
+		Objects.requireNonNull(other, "Specification needs to be set");
 		return new DisjunctionSpecification<T>(this, other);
 	}
 
@@ -36,6 +38,7 @@ public interface Specification<T> {
 	 * @return The new conjunction specification.
 	 */
 	public default Specification<T> and(final Specification<T> other) {
+		Objects.requireNonNull(other, "Specification needs to be set");
 		return new ConjunctionSpecification<T>(this, other);
 	}
 	
@@ -62,7 +65,7 @@ public interface Specification<T> {
 	 * Creates the specification for specified class.
 	 * All objects which are instances of that class or subclass satisfied this specification.
 	 * 
-	 * @param clazz
+	 * @param type
 	 */
 	//static void createSpecificationFor(Class<?> type) {}
 	
@@ -94,6 +97,7 @@ public interface Specification<T> {
 	 */
 	@Factory
 	public static <T> NegationSpecification<T> createNegationSpecification(Specification<T> spec) {
+		Objects.requireNonNull(spec, "Specification needs to be set");
 		return new NegationSpecification<T>(spec);
 	}
 	
@@ -108,6 +112,8 @@ public interface Specification<T> {
 	@SafeVarargs
 	public static <T> Specification<T> all(final Specification<T> spec1, final Specification<T> spec2, final Specification<T>... specs) 
 	{
+		Objects.requireNonNull(spec1, "Specification needs to be set");
+		Objects.requireNonNull(spec2, "Specification needs to be set");
 		Specification<T> all = new ConjunctionSpecification<T>(spec1, spec2);
 		for (Specification<T> spec : specs) {
 			all = all.and(spec);
@@ -126,6 +132,8 @@ public interface Specification<T> {
 	@Factory
 	public static <T> Specification<T> any(final Specification<T> spec1, final Specification<T> spec2, final Specification<T>... specs) 
 	{
+		Objects.requireNonNull(spec1, "Specification needs to be set");
+		Objects.requireNonNull(spec2, "Specification needs to be set");
 		Specification<T> any = new DisjunctionSpecification<T>(spec1, spec2);
 		for (Specification<T> spec : specs) {
 			any = any.or(spec);
