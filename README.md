@@ -1,23 +1,36 @@
 # Specification Pattern
 
-The specification pattern as described by *Eric Evans* and *Martin Fowler*.
-
 [![Build Status](https://travis-ci.org/uetoyo/specification.svg?branch=master)](https://travis-ci.org/uetoyo/specification)
 [![Release](https://jitpack.io/v/uetoyo/specification.svg)](https://jitpack.io/#uetoyo/specification)
+
+The specification pattern as described by *Eric Evans* and *Martin Fowler*.
 
 ## Getting Started
 
 ### Instalation
 
-Instalation of the package is possible via [JetPack](https://jitpack.io/#uetoyo/specification).
+The installation of the package is possible via [JitPack](https://jitpack.io/#uetoyo/specification). To add a dependency on Specification latest release using Maven, use the following:
+
+**Step 1**. Add the repository to your build file
 
 ```bash
-    <repositories>
-        <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
-        </repository>
-    </repositories>
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+```
+
+**Step 2.** Add the latest release dependency
+
+```bash
+<dependency>
+    <groupId>com.github.uetoyo</groupId>
+    <artifactId>specification</artifactId>
+    <version>v0.5.0</version>
+</dependency>
+
 ```
 
 For another build system check the link above.
