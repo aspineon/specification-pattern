@@ -1,7 +1,9 @@
-[![Build Status](https://travis-ci.org/uetoyo/specification.svg?branch=master)](https://travis-ci.org/uetoyo/specification)
-[![Release](https://jitpack.io/v/uetoyo/specification.svg)](https://jitpack.io/#uetoyo/specification)
+# Specification Pattern
 
 The specification pattern as described by *Eric Evans* and *Martin Fowler*.
+
+[![Build Status](https://travis-ci.org/uetoyo/specification.svg?branch=master)](https://travis-ci.org/uetoyo/specification)
+[![Release](https://jitpack.io/v/uetoyo/specification.svg)](https://jitpack.io/#uetoyo/specification)
 
 ## Getting Started
 
