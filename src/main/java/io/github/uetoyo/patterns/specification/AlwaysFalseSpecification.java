@@ -8,7 +8,14 @@ import java.util.Objects;
  * @param <T> The type of entity for which the specification is defined.
  */
 final class AlwaysFalseSpecification<T> extends NullaryCompositeSpecification<T> {
-	
+
+	private final static AlwaysFalseSpecification<?> INSTANCE = new AlwaysFalseSpecification<>();
+
+	private AlwaysFalseSpecification() {}
+
+	static AlwaysFalseSpecification<?> instance() {
+		return INSTANCE;
+	}
 	@Override
 	public boolean isSatisfiedBy(T candidate) {
 		return false;

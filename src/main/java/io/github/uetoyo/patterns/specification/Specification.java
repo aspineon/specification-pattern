@@ -76,7 +76,7 @@ public interface Specification<T> {
 	 */
 	@Factory
 	public static <T> AlwaysFalseSpecification<T> createAlwaysFalseSpecification() {
-		return new AlwaysFalseSpecification<T>();
+		return (AlwaysFalseSpecification<T>)AlwaysFalseSpecification.instance();
 	}
 	
 	/**
@@ -86,7 +86,7 @@ public interface Specification<T> {
 	 */
 	@Factory
 	public static <T> AlwaysTrueSpecification<T> createAlwaysTrueSpecification() {
-		return new AlwaysTrueSpecification<T>();
+		return (AlwaysTrueSpecification<T>)AlwaysTrueSpecification.instance();
 	}
 
 	/**
