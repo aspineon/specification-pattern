@@ -1,7 +1,7 @@
 # Specification Pattern
 
-[![Build Status](https://travis-ci.org/uetoyo/specification.svg?branch=master)](https://travis-ci.org/uetoyo/specification)
-[![Release](https://jitpack.io/v/uetoyo/specification.svg)](https://jitpack.io/#uetoyo/specification)
+[![Build Status](https://travis-ci.org/uetoyo/spec.svg?branch=master)](https://travis-ci.org/uetoyo/spec)
+[![Release](https://jitpack.io/v/uetoyo/spec.svg)](https://jitpack.io/#uetoyo/spec)
 
 The specification pattern as described by *Eric Evans* and *Martin Fowler*.
 
@@ -9,7 +9,7 @@ The specification pattern as described by *Eric Evans* and *Martin Fowler*.
 
 ### Instalation
 
-The installation of the package is possible via [JitPack](https://jitpack.io/#uetoyo/specification). To add a dependency on Specification latest release using Maven, use the following:
+The installation of the package is possible via [JitPack](https://jitpack.io/#uetoyo/spec). To add a dependency on Specification latest release using Maven, use the following:
 
 **Step 1**. Add the repository to your build file
 
@@ -37,15 +37,15 @@ For another build system check the link above.
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/uetoyo/specification/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/uetoyo/spec/tags). 
 
 ## Authors
 
-See also the list of [contributors](https://github.com/https://github.com/uetoyo/specification//contributors) who participated in this project.
+See also the list of [contributors](https://github.com/uetoyo/spec/contributors) who participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
 ## Overviev of the pattern
 
