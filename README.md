@@ -13,7 +13,7 @@ We use it in the production at Czech Radio together with our repository classes,
 
 ### Instalation
 
-The installation of the package is possible via [JitPack](https://jitpack.io/#uetoyo/spec). To add a dependency on Specification latest release using Maven, use the following:
+The installation of the package is possible via [JitPack](https://jitpack.io/#uetoyo/specification-pattern). To add a dependency on Specification latest release using Maven, use the following:
 
 **Step 1**. Add the repository to your build file
 
@@ -45,7 +45,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-See also the list of [contributors](https://github.com/uetoyo/spec/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/uetoyo/specification-pattern/contributors) who participated on this project.
 
 ## License
 
