@@ -3,7 +3,7 @@ package io.github.uetoyo.patterns.specification;
 import io.github.uetoyo.patterns.specification.protocols.Immutable;
 
 /**
- * Conjunction specification represents the logical OR.
+ * Disjunction specification represents the logical OR.
  *
  * @param <T> The type of entity for which the specification is defined.
  */
